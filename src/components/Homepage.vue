@@ -49,9 +49,15 @@ function addOrderListz() {
 
 </script>
 
+
 <template>
-  <div class="menu d-flex justify-content-between m-5">
-    <h3 class="mx-5">logo</h3>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300&display=swap" rel="stylesheet">
+
+  <div class="menu d-flex justify-content-between">
+    <h3 class="mx-5">LAB-8</h3>
 
     <div class="box-menu d-flex">
       <h3
@@ -59,7 +65,7 @@ function addOrderListz() {
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
       >
-        Cart[{{ Cart }}]
+        ตะกร้า[{{ Cart }}]
       </h3>
       <h3
         class="cart mx-2"
@@ -76,7 +82,6 @@ function addOrderListz() {
     <div class="row row-cols-1 row-cols-md-4 g-4">
       <div class="col" v-for="(item, index) in shop_food" :key="index">
         <div class="card">
-          <img :src="item.img" class="card-img-top" alt="Menu Image" />
           <div class="card-body">
             <h5 class="card-title">{{ item.name }}</h5>
             <p class="card-text">ราคา {{ item.price }} บาท</p>
@@ -127,14 +132,14 @@ function addOrderListz() {
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title">{{ item.name }}</h5>
-                  <p class="card-text">จำนวนสินค้า {{ item.quantity }}</p>
+                  <p class="card-text">จำนวน {{ item.quantity }}</p>
                   <p class="card-text">
                     <small class="text-body-secondary">{{ item.price }}</small>
                   </p>
                 </div>
               </div>
             </div>
-            <button @click="removeFromCart(item)">ลบออก</button>
+            <button @click="removeFromCart(item)">delete</button>
           </div>
         </div>
 
@@ -142,7 +147,7 @@ function addOrderListz() {
         <div class="row g-0 m-2">
           <div class="col-md-12">
             <div class="card-body">
-              <h5 class="card-title">ราคารวมทั้งหมด</h5>
+              <h5 class="card-title">ราคารวม : </h5>
               <p class="card-text">{{ totalPrice }} บาท</p>
             </div>
           </div>
@@ -154,14 +159,14 @@ function addOrderListz() {
             class="btn btn-secondary"
             data-bs-dismiss="modal"
           >
-            ปิด
+            close
           </button>
           <button
             type="button"
             class="btn btn-primary"
             @click="addOrderListz()"
           >
-            สั่งซื้อ
+            enter
           </button>
         </div>
       </div>
@@ -208,18 +213,27 @@ function addOrderListz() {
 
 <style>
 
+*{
+  margin: 0;
+  padding: 0;
+  font-family: itim;
+}
+
 .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #575757;
-  color: white;
+  padding: 15px;
+  background-color: rgb(224, 224, 224);
+  color: #333;
+  border-bottom: 1px #333 solid;
 }
 
 .menu h3 {
   margin: 0;
-  font-size: 24px;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .box-menu {
@@ -239,8 +253,6 @@ function addOrderListz() {
   text-decoration: none;
 }
 
-
-
 .modal-content {
   max-height: 500px; 
   overflow-y: auto;
@@ -249,7 +261,7 @@ function addOrderListz() {
   cursor: pointer;
 }
 .container {
-  padding: 20px;
+  padding: 90px;
 }
 
 .card {
@@ -269,5 +281,8 @@ function addOrderListz() {
 
 .card-text {
   font-weight: bold;
+}
+button:hover{
+  background-color: aquamarine;
 }
 </style>
