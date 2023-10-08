@@ -225,7 +225,7 @@ function addOrderListz() {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: rgb(224, 224, 224);
+  background-color: rgb(231, 203, 150);
   color: #333;
   border-bottom: 1px #333 solid;
 }
