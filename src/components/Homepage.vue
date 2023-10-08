@@ -82,6 +82,7 @@ function addOrderListz() {
     <div class="row row-cols-1 row-cols-md-4 g-4">
       <div class="col" v-for="(item, index) in shop_food" :key="index">
         <div class="card">
+                 <img :src="item.img" class="card-img-top" alt="Menu Image" />
           <div class="card-body">
             <h5 class="card-title">{{ item.name }}</h5>
             <p class="card-text">ราคา {{ item.price }} บาท</p>
